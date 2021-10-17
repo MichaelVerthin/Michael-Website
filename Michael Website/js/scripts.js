@@ -64,17 +64,24 @@ function topFunction() {
 }
 var english = document.getElementById('en_click'),
     hebraw = document.getElementById('he_click'),
+    russian = document.getElementById('ru_click'),
     en_txt = document.querySelectorAll('#en'),
     he_txt = document.querySelectorAll('#he'),
+    ru_txt = document.querySelectorAll('#ru'),
     nb_en = en_txt.length,
-    nb_he = he_txt.length;
+    nb_he = he_txt.length,
+    nb_ru = ru_txt.length;
 
 english.addEventListener('click', function() {
-    langue(english,hebraw);
+    langue(english,hebraw,russian);
 }, false);
 
 hebraw.addEventListener('click', function() {
-    langue(hebraw,english);
+    langue(hebraw,english,russian);
+}, false);
+
+russian.addEventListener('click', function() {
+    langue(russian,hebraw,english);
 }, false);
 
 function langue(langueOn,langueOff){
@@ -85,10 +92,17 @@ function langue(langueOn,langueOff){
     if(langueOn.innerHTML == 'en'){
         afficher(en_txt, nb_en);
         cacher(he_txt, nb_he);
+        cacher(ru_txt, nb_ru);
     }
     else if(langueOn.innerHTML == 'he'){
         afficher(he_txt, nb_he);
         cacher(en_txt, nb_en);
+        cacher(ru_txt, nb_ru);
+    }
+    else if(langueOn.innerHTML == 'ru'){
+        afficher(ru_txt, nb_ru);
+        cacher(en_txt, nb_en);
+        cacher(he_txt, nb_he);
     }
 }
 
