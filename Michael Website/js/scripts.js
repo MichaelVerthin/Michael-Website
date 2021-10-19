@@ -64,33 +64,73 @@ function topFunction() {
 }
 var english = document.getElementById('en_click'),
     hebraw = document.getElementById('he_click'),
+    russian = document.getElementById('ru_click'),
     en_txt = document.querySelectorAll('#en'),
     he_txt = document.querySelectorAll('#he'),
+    ru_txt = document.querySelectorAll('#ru'),
     nb_en = en_txt.length,
-    nb_he = he_txt.length;
+    nb_he = he_txt.length,
+    nb_ru = ru_txt.length,
+    light = document.getElementById('lightmode'),
+    dark = document.getElementById('darkmode');
 
-english.addEventListener('click', function() {
-    langue(english,hebraw);
+light.addEventListener('click', function(){
+    bgcolor(light,dark);
 }, false);
-
-hebraw.addEventListener('click', function() {
-    langue(hebraw,english);
+dark.addEventListener('click', function(){
+    bgcolor(dark,light);
 }, false);
-function langue(langueOn,langueOff){
-    if (!langueOn.classList.contains('current_lang')) {
-        langueOn.classList.toggle("current_lang");
-        langueOff.classList.toggle("current_lang");
+    
+function bgcolor(colorOff, colorOn){
+    if(colorOn.classList.contains('current_clr_light')){
+        colorOn.classList.toggle('current_clr_light');
+        colorOff.classList.toggle('current_clr_dark');
+        document.documentElement.setAttribute('data-theme', 'light');
     }
-    if(langueOn.innerHTML == 'en'){
-        afficher(en_txt, nb_en);
-        cacher(he_txt, nb_he);
-    }
-    else if(langueOn.innerHTML == 'he'){
-        afficher(he_txt, nb_he);
-        cacher(en_txt, nb_en);
+    else if(colorOn.classList.contains('current_clr_dark')){
+        colorOn.classList.toggle('current_clr_dark');
+        colorOff.classList.toggle('current_clr_light');
+        document.documentElement.setAttribute('data-theme', 'dark');
     }
 }
 
+english.addEventListener('click', function() {
+    langue(english,hebraw,russian);
+}, false);
+
+hebraw.addEventListener('click', function() {
+    langue(hebraw,english,russian);
+}, false);
+
+russian.addEventListener('click', function() {
+    langue(russian,hebraw,english);
+}, false);
+
+function langue(langue1,langue2,langue3){
+    if (langue2.classList.contains('current_lang')) {
+        langue1.classList.toggle('current_lang');
+        langue2.classList.toggle('current_lang');
+    }
+    if (langue3.classList.contains('current_lang')) {
+        langue1.classList.toggle('current_lang');
+        langue3.classList.toggle('current_lang');
+    }
+    if(langue1.innerHTML == 'en'){
+        afficher(en_txt, nb_en);
+        cacher(he_txt, nb_he);
+        cacher(ru_txt, nb_ru);
+    }
+    else if(langue1.innerHTML == 'he'){
+        afficher(he_txt, nb_he);
+        cacher(en_txt, nb_en);
+        cacher(ru_txt, nb_ru);
+    }
+    else if(langue1.innerHTML == 'ru'){
+        afficher(ru_txt, nb_ru);
+        cacher(en_txt, nb_en);
+        cacher(he_txt, nb_he);
+    }
+}
 function afficher(txt,nb){
     for(var i=0; i < nb; i++){
         txt[i].style.display = 'block';
@@ -102,6 +142,7 @@ function cacher(txt,nb){
     }
 }
 function init(){
-    langue(english,hebraw);
+    langue(english,hebraw,russian);
+    bgcolor(dark,light);
 }
 init();
