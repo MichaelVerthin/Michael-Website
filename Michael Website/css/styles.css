@@ -11551,6 +11551,7 @@ html {
 	justify-content: center;
 	align-items: center;
 	transition: 0.5s;
+	border-width: medium;
 }
 #mainNav {
 	padding-top: 1rem;
@@ -11714,7 +11715,7 @@ html {
 	left: 0;
 	transition: all 0.3s ease-in-out;
 	opacity: 0;
-	background-color: #ff7f50;
+	background-color: rgb(var(--bs-secondary-rgb));
 }
 .portfolio .portfolio-item .portfolio-item-caption:hover {
 	opacity: 0.7;
@@ -11833,8 +11834,8 @@ footer .wave#wave4 {
 	font-size: 1rem;
 }
 #myBtn:hover {
-	color: #000;
-	background-color: #f8f9fa;
+	color: rgb(var(--bs-primary-rgb));
+	background-color: rgb(var(--bs-secondary-rgb));
 }
 @media (min-width: 992px) {
 	#myBtn {
@@ -11854,13 +11855,13 @@ footer .wave#wave4 {
 		-moz-user-select: none;
 		-ms-user-select: none;
 		user-select: none;
-		background-color: transparent;
-		border: 0.125rem solid transparent;
+		background-color: rgb(var(--bs-primary-rgb));
+		border: 0.225rem solid transparent;
 		border-radius: 0.5rem;
 		transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out,
 			box-shadow 0.15s ease-in-out;
-		color: #f8f9fa;
-		border-color: #f8f9fa;
+		color: rgb(var(--bs-secondary-rgb));
+		border-color: rgb(var(--bs-secondary-rgb));
 		padding: 1.35rem 1.75rem;
 		font-size: 1.25rem;
 	}
