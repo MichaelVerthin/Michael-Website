@@ -33,7 +33,7 @@
 	--bs-gray-700: #495057;
 	--bs-gray-800: #343a40;
 	--bs-gray-900: #212529;
-	--bs-primary: #ff7f50;
+	--bs-primary: #ff6e32;
 	--bs-secondary: #2c3e50;
 	--bs-success: #198754;
 	--bs-info: #0dcaf0;
@@ -42,7 +42,7 @@
 	--bs-light: #f8f9fa;
 	--bs-dark: #212529;
 	--bs-primary-rgb: 61, 66, 63;
-	--bs-secondary-rgb: 255, 101, 0;
+	--bs-secondary-rgb: 255, 110, 50;
 	--bs-success-rgb: 25, 135, 84;
 	--bs-info-rgb: 13, 202, 240;
 	--bs-warning-rgb: 255, 193, 7;
@@ -63,6 +63,7 @@
 	--bs-body-line-height: 1.5;
 	--bs-body-color: #212529;
 	--bs-body-bg: #fff;
+	--bs-wave-img: url('../assets/img/wave.png');
 }
 *,
 *::before,
@@ -77,9 +78,10 @@
 	}
 }
 [data-theme="dark"] {
-	--bs-primary-rgb: 255, 255, 255;
+	--bs-primary-rgb: 175, 238, 238;
+	--bs-secondary-rgb: 255, 123, 0;
 	--bs-white-rgb: 0, 0, 0;
-	--bs-avatar-rgb: ;
+	--bs-wave-img: url('../assets/img/wavelight.png');
 }
 body {
 	margin: 0;
@@ -2698,7 +2700,7 @@ textarea.form-control-lg {
 .form-range::-moz-range-thumb {
 	width: 1rem;
 	height: 1rem;
-	background-color: #ff7f50;
+	background-color: rgb(var(--bs-secondary-rgb));
 	border: 0;
 	border-radius: 1rem;
 	-moz-transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
@@ -3221,36 +3223,36 @@ fieldset:disabled .btn {
 
 .btn-success {
 	color: #fff;
-	background-color: #ff7f50;
+	background-color: rgb(var(--bs-secondary-rgb));
 	border-color: #fff;
 }
 .btn-success:hover {
-	color: #2c3e50;
+	color: rgb(var(--bs-primary-rgb));
 	background-color: #fff;
 	border-color: #fff;
 }
 .btn-check:focus + .btn-success,
 .btn-success:focus {
 	color: #fff;
-	background-color: #ff7f50;
-	border-color: #ff7f50;
+	background-color: rgb(var(--bs-secondary-rgb));
+	border-color: rgb(var(--bs-secondary-rgb));
 }
 .current_lang {
-	color: #ff7f50;
+	color: rgb(var(--bs-secondary-rgb));
 	font-weight: bolder;
-	background-color: #2c3e50;
+	background-color: rgb(var(--bs-primary-rgb));
 	border-color: #fff;
 }
 .current_clr_dark {
-	color: #ff7f50;
+	color: rgb(var(--bs-secondary-rgb));
 	font-weight: bolder;
-	background-color: #2c3e50;
+	background-color: rgb(var(--bs-primary-rgb));
 	border-color: #fff;
 }
 .current_clr_light {
-	color: #ff7f50;
+	color: rgb(var(--bs-secondary-rgb));
 	font-weight: bolder;
-	background-color: #2c3e50;
+	background-color: rgb(var(--bs-primary-rgb));
 	border-color: #fff;
 }
 .current_lang:hover,
@@ -3265,7 +3267,7 @@ fieldset:disabled .btn {
 .current_clr_dark:focus {
 	pointer-events: none;
 }
-.current_clr_lightk:hover,
+.current_clr_light:hover,
 .current_clr_light:active,
 .current_clr_light:checked,
 .current_clr_light:focus {
@@ -5379,7 +5381,7 @@ fieldset:disabled .btn {
 	color: #fff;
 	text-align: center;
 	white-space: nowrap;
-	background-color: #ff7f50;
+	background-color: rgb(var(--bs-secondary-rgb));
 	transition: width 0.6s ease;
 }
 @media (prefers-reduced-motion: reduce) {
@@ -11706,7 +11708,6 @@ html {
 		-webkit-box-shadow: inset 0px 0px 0px 9px rgba(255, 255, 255, .3);
 		-moz-box-shadow: inset 0px 0px 0px 9px rgba(255, 255, 255, .3);
 		box-shadow: inset 0px 0px 0px 9px rgba(255, 255, 255, .3);
-		background-color: rgb(var(--bs-avatar-rgb));
 	}
 }
 .portfolio .portfolio-item {
@@ -11754,7 +11755,7 @@ footer {
 	color: #f0f0f0;
 	position: relative;
 	width: 100%;
-	background: #ff7f50;
+	background: rgb(var(--bs-secondary-rgb));
 	min-height: 100px;
 	padding: 20px 50px;
 	display: flex;
@@ -11767,7 +11768,7 @@ footer .wave {
 	left: 0;
 	width: 100%;
 	height: 100px;
-	background: url('../assets/img/wave.png');
+	background: var(--bs-wave-img);
 	background-size: 1000px 100px;
 }
 footer .wave#wave1 {
