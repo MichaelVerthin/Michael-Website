@@ -72,9 +72,9 @@ var english = document.getElementById('en_click'),
     nb_he = he_txt.length,
     nb_ru = ru_txt.length,
     light = document.getElementById('lightmode'),
-    dark = document.getElementById('darkmode');
-const currentTheme = localStorage.getItem('data-theme') ? localStorage.getItem('data-theme') : null;
-const currentlang = localStorage.getItem('data-lang') ? localStorage.getItem('data-lang') : null;
+    dark = document.getElementById('darkmode'),
+    currentTheme = localStorage.getItem('data-theme') ? localStorage.getItem('data-theme') : null,
+    currentlang = localStorage.getItem('data-lang') ? localStorage.getItem('data-lang') : null;
 
 light.addEventListener('click', function(){
     bgcolor(light,dark);
@@ -115,10 +115,17 @@ function langue(langue1,langue2,langue3){
     if (langue2.classList.contains('current_lang')) {
         langue1.classList.toggle('current_lang');
         langue2.classList.toggle('current_lang');
+        document.documentElement.setAttribute('data-lang', 'he');
+        localStorage.setItem('data-lang', 'he');
     }
     if (langue3.classList.contains('current_lang')) {
         langue1.classList.toggle('current_lang');
         langue3.classList.toggle('current_lang');
+        document.documentElement.setAttribute('data-lang', 'ru');
+        localStorage.setItem('data-lang', 'ru');
+    }else{
+        document.documentElement.setAttribute('data-lang', 'en');
+        localStorage.setItem('data-lang', 'en');
     }
     if(langue1.innerHTML == 'en'){
         afficher(en_txt, nb_en);
@@ -148,6 +155,19 @@ function cacher(txt,nb){
 }
 function init(){
     langue(english,hebraw,russian);
+    /*if (currentlang) {
+        document.documentElement.setAttribute('data-lang', currentlang);
+        if (currentlang === 'he'){
+            hebraw.classList.toggle('current_lang');
+            english.classList.toggle('current_lang');
+            hebraw.classList.setItem('current_lang');
+        }
+        if (currentlang === 'ru'){
+            russian.classList.toggle('current_lang');
+            english.classList.toggle('current_lang');
+            russian.classList.setItem('current_lang');
+        }
+    }*/
     if (currentTheme) {
         document.documentElement.setAttribute('data-theme', currentTheme);
         if (currentTheme === 'dark'){
@@ -157,6 +177,6 @@ function init(){
         }
     }
     bgcolor(dark,light);
-    pagechange(homelink,bloglink);
+    // pagechange(homelink,bloglink);
 }
 init();
