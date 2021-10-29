@@ -12081,7 +12081,6 @@ footer .wave#wave4 {
 	top: 0;
 	height: 100%;
 	width: 100%;
-	background-color: rgba(var(--bs-secondary-rgb), 0.15);
 }
 #projects .item .left .img img {
 	object-fit: cover;
