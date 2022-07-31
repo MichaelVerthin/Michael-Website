@@ -3235,13 +3235,13 @@ fieldset:disabled .btn {
 	background-color: rgb(var(--bs-secondary-rgb));
 	border-color: rgb(var(--bs-secondary-rgb));
 }
-.current_page {
+.currentLang {
 	color: rgb(var(--bs-secondary-rgb));
 	font-weight: bolder;
 	background-color: rgb(var(--bs-primary-rgb));
 	border-color: #fff;
 }
-.current_lang {
+.currentLang {
 	color: rgb(var(--bs-secondary-rgb));
 	font-weight: bolder;
 	background-color: rgb(var(--bs-primary-rgb));
@@ -12032,16 +12032,17 @@ footer .wave#wave4 {
 	}
 }
 #projects {
-	padding: 0 0;
+	padding: 0 0 0;
 }
 #projects .item {
+	position: relative;
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	max-width: 500%;
+	max-width: 100%;
 	margin: 0 auto;
 	margin-bottom: 15rem;
-	/* gap: 2rem; */
+	gap: 2rem;
 }
 #projects .item:nth-of-type(even) {
 	flex-direction: row-reverse;
