@@ -24,4 +24,7 @@
     });
 
 })(jQuery);
+window.addEventListener('load',() => {
+    init();
+});
 

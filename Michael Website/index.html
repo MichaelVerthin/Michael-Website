@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>Michael's Website</title>
+        <title id="en">Michael's Website / Home</title>
         <!-- Favicon-->
         <link rel="icon" type="image/x-icon" href="assets/img/FaceLogo.png" />
         <!-- Font Awesome icons (free version)-->
@@ -18,7 +18,6 @@
         <link href="css/styles.css" rel="stylesheet" />
         <link rel="stylesheet" href="/path/to/flickity.css" media="screen">
         <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
-        
     </head>
     <body id="page-top header" onload="initlang()">
         <!-- Navigation-->
@@ -107,7 +106,7 @@
                         learn new tricks. I found my place in QA, <b>Quality Assurance</b>, I studied the process of <b>Software 
                         Testing</b> and got invested in all of its aspects.</p>
                     </div>
-                    <div id="en" class="container mb-5 col-lg-8 align-items-center text-center">
+                    <div id="en" class="container mb-5 mt-5 col-lg-8 align-items-center text-center">
                         <p class="lead"> Except for Quality Assurance, I am a big programming 
                         enthusiast that loves to discover new <b>programming languages</b> and learn new <b>algorithms</b> to solve problems. Another thing that I absolutely 
                         adore is <b>coffee</b>, there is nothing better
@@ -302,9 +301,9 @@
                                     הרגשתי שהכישורים שלי סוף סוף מתחילים להראות לנו</p>
                             <hr class="mb-4">
                             <div class="container text-center">
-                                <a class="btn btn-outline-light btn-sm"><img src="./assets/img/Logo/LogoTestRail.png" width="70" height="70"></a>
-                                <a class="btn btn-outline-light btn-sm"><img src="./assets/img/Logo/LogoWord.png" width="70" height="70"></a>
-                                <a class="btn btn-outline-light btn-sm"><img src="./assets/img/Logo/LogoPowerpoint.png" width="70" height="70"></a>
+                                <a class="btn btn-outline-light btn-sm"><img src="./assets/img/Logo/LogoTestRail.png" width="50" height="50"></a>
+                                <a class="btn btn-outline-light btn-sm"><img src="./assets/img/Logo/LogoWord.png" width="50" height="50"></a>
+                                <a class="btn btn-outline-light btn-sm"><img src="./assets/img/Logo/LogoPowerpoint.png" width="50" height="50"></a>
                             </div><hr class="mb-4 mt-4">
                             <div class="text-center mb-0">
                                 <a class="btn btn-success btn-xl" data-bs-toggle="modal" data-bs-target="#portfolioModal1">
@@ -335,9 +334,9 @@
                                 אחרי שהתפצלנו לצוותים, התחלנו לחפש איפה אנחנו בטוחים שיהיו כמות עצומה של בעיות, אתר בית ספר מקומי!</p>
                             <hr class="mb-4">
                             <div class="container text-center">
-                                <a class="btn btn-outline-light btn-sm"><img src="./assets/img/Logo/LogoTestRail.png" width="70" height="70"></a>
-                                <a class="btn btn-outline-light btn-sm"><img src="./assets/img/Logo/LogoWord.png" width="70" height="70"></a>
-                                <a class="btn btn-outline-light btn-sm"><img src="./assets/img/Logo/LogoPowerpoint.png" width="70" height="70"></a>
+                                <a class="btn btn-outline-light btn-sm"><img src="./assets/img/Logo/Logojira.png" width="50" height="50"></a>
+                                <a class="btn btn-outline-light btn-sm"><img src="./assets/img/Logo/LogoWord.png" width="50" height="50"></a>
+                                <a class="btn btn-outline-light btn-sm"><img src="./assets/img/Logo/LogoPowerpoint.png" width="50" height="50"></a>
                             </div><hr class="mb-4 mt-4">
                             <div class="text-center mb-0">
                                 <a class="btn btn-success btn-xl" data-bs-toggle="modal" data-bs-target="#portfolioModal2">
@@ -403,6 +402,10 @@
                                                 data-validation-required-message="Please enter your message"></textarea>
                                             <p class="help-block text-danger"></p>
                                         </div>
+                                        <label class="mb-3 fControl">
+                                            <input type="checkbox" name="Newsletter?" class="py-3 px-3" id="news" placeholder="newsletter" st />
+                                            Yes, I would like to sign up for the newsletter<br>and receive content posted to this blog<br>(optional)
+                                        </label>
                                         <div>
                                             <button class="btn btn-success btn-xl mb-5" type="submit" id="sendMessageButton">
                                                 <p class="lead mb-0"><i class="fas fa-comment-alt me-2"></i>Send Message</p></button>
@@ -435,6 +438,10 @@
                                                 border: 0.125rem solid #ced4da;"
                                                 data-validation-required-message="Please enter your message"></textarea>
                                             <p class="help-block text-danger"></p>
+                                        </div>
+                                        <div class="mb-3 fControlhe">
+                                            כן, אני רוצה להירשם לניוזלטר<br>ולקבל תוכן שמתפרסם בבלוג הזה<br>(אופציונלי)
+                                            <input type="checkbox" name="news" class="py-3 px-3" id="news" placeholder="שם פרטי" />
                                         </div>
                                         <div>
                                             <button class="btn btn-success btn-xl mb-5" type="submit" id="sendMessageButton">
@@ -892,25 +899,24 @@
                     </div>
                 </div>
             </div>
-        </div>
-        <!-- JavaScript Libraries -->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
-    <script src="lib/typed/typed.min.js"></script>
-    <script src="lib/easing/easing.min.js"></script>
-    <script src="lib/waypoints/waypoints.min.js"></script>
-    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
-    <script src="lib/isotope/isotope.pkgd.min.js"></script>
-    <script src="lib/lightbox/js/lightbox.min.js"></script>
-
-    <!-- Contact Javascript File -->
-    <script src="mail/jqBootstrapValidation.min.js"></script>
-    <script src="mail/contact.js"></script>
-    <!-- Template Javascript -->
-    <script src="js/main.js"></script>
-    <script src="js/scripts.js" defer></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>     
-    <script src="/path/to/flickity.pkgd.min.js"></script>       
-    <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>                    
+        </div>                   
     </body>
+            <!-- JavaScript Libraries -->
+            <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+            <script src="lib/typed/typed.min.js"></script>
+            <script src="lib/easing/easing.min.js"></script>
+            <script src="lib/waypoints/waypoints.min.js"></script>
+            <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+            <script src="lib/isotope/isotope.pkgd.min.js"></script>
+            <script src="lib/lightbox/js/lightbox.min.js"></script>
+            <!-- Contact Javascript File -->
+            <script src="mail/jqBootstrapValidation.min.js"></script>
+            <script src="mail/contact.js"></script>
+            <!-- Template Javascript -->
+            <script src="js/main.js"></script>
+            <script src="js/scripts.js" defer></script>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>     
+            <script src="/path/to/flickity.pkgd.min.js"></script>       
+            <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script> 
 </html>
