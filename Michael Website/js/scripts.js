@@ -45,20 +45,20 @@ window.addEventListener('DOMContentLoaded', event => {
 mybutton = document.getElementById("myBtn");
 
 // When the user scrolls down 20px from the top of the document, show the button
-window.onscroll = function() {scrollFunction()};
+window.onscroll = function () { scrollFunction() };
 
 function scrollFunction() {
-  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-    mybutton.style.display = "block";
-  } else {
-    mybutton.style.display = "none";
-  }
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        mybutton.style.display = "block";
+    } else {
+        mybutton.style.display = "none";
+    }
 }
 
 // When the user clicks on the button, scroll to the top of the document
 function topFunction() {
-  document.body.scrollTop = 0; // For Safari
-  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+    document.body.scrollTop = 0; // For Safari
+    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
 }
 
 var english = document.getElementById('en_click'),
@@ -72,21 +72,21 @@ var english = document.getElementById('en_click'),
     currentTheme = localStorage.getItem('data-theme') ? localStorage.getItem('data-theme') : null,
     currentlang = localStorage.getItem('data-lang') ? localStorage.getItem('data-lang') : null;
 
-light.addEventListener('click', function(){
-    bgcolor(light,dark);
+light.addEventListener('click', function () {
+    bgcolor(light, dark);
 }, false);
-dark.addEventListener('click', function(){
-    bgcolor(dark,light);
+dark.addEventListener('click', function () {
+    bgcolor(dark, light);
 }, false);
-    
-function bgcolor(colorOff, colorOn){
-    if(colorOn.classList.contains('current_clr_light')){
+
+function bgcolor(colorOff, colorOn) {
+    if (colorOn.classList.contains('current_clr_light')) {
         colorOn.classList.toggle('current_clr_light');
         colorOff.classList.toggle('current_clr_dark');
         document.documentElement.setAttribute('data-theme', 'light');
         localStorage.setItem('data-theme', 'light');
     }
-    else if(colorOn.classList.contains('current_clr_dark')){
+    else if (colorOn.classList.contains('current_clr_dark')) {
         colorOn.classList.toggle('current_clr_dark');
         colorOff.classList.toggle('current_clr_light');
         document.documentElement.setAttribute('data-theme', 'dark');
@@ -94,18 +94,18 @@ function bgcolor(colorOff, colorOn){
     }
 }
 
-english.addEventListener('click', function() {
-    langue(hebraw,english);
+english.addEventListener('click', function () {
+    langue(hebraw, english);
 }, false);
 
-hebraw.addEventListener('click', function() {
-    langue(english,hebraw);
+hebraw.addEventListener('click', function () {
+    langue(english, hebraw);
 }, false);
-window.addEventListener('load',() => {
+window.addEventListener('load', () => {
     init();
 });
-function langue(langueOff,langueOn){
-    if(langueOff.classList.contains('currentLang')&&langueOn.innerHTML == 'he'){
+function langue(langueOff, langueOn) {
+    if (langueOff.classList.contains('currentLang') && langueOn.innerHTML == 'he') {
         console.log('he click')
         afficher(he_txt, nb_he);
         cacher(en_txt, nb_en);
@@ -114,7 +114,7 @@ function langue(langueOff,langueOn){
         document.documentElement.setAttribute('data-lang', 'he');
         localStorage.setItem('data-lang', 'he');
     }
-    else if(langueOff.classList.contains('currentLang')&&langueOn.innerHTML == 'en'){
+    else if (langueOff.classList.contains('currentLang') && langueOn.innerHTML == 'en') {
         console.log('en click')
         afficher(en_txt, nb_en);
         cacher(he_txt, nb_he);
@@ -124,20 +124,20 @@ function langue(langueOff,langueOn){
         localStorage.setItem('data-lang', 'en');
     }
 }
-function afficher(txt,nb){
-    for(var i=0; i < nb; i++){
+function afficher(txt, nb) {
+    for (var i = 0; i < nb; i++) {
         txt[i].style.display = 'block';
     }
 }
-function cacher(txt,nb){
-    for(var i=0; i < nb; i++){
+function cacher(txt, nb) {
+    for (var i = 0; i < nb; i++) {
         txt[i].style.display = 'none';
     }
 }
-function init(){
-    if(currentlang === 'he'){
+function init() {
+    if (currentlang === 'he') {
         console.log(currentlang);
-        if(!hebraw.classList.contains('currentLang')){
+        if (!hebraw.classList.contains('currentLang')) {
             hebraw.classList.toggle('currentLang');
         }
         afficher(he_txt, nb_he);
@@ -145,9 +145,9 @@ function init(){
         document.documentElement.setAttribute('data-lang', 'he');
         localStorage.setItem('data-lang', 'he');
     }
-    else if(currentlang === 'en'){
+    else if (currentlang === 'en') {
         console.log(currentlang);
-        if(!english.classList.contains('currentLang')){
+        if (!english.classList.contains('currentLang')) {
             english.classList.toggle('currentLang');
         }
         afficher(en_txt, nb_en);
@@ -156,16 +156,16 @@ function init(){
         localStorage.setItem('data-lang', 'en');
     }
 }
-function initcolor(){
+function initcolor() {
     if (currentTheme) {
         document.documentElement.setAttribute('data-theme', currentTheme);
-        if (currentTheme === 'dark'){
+        if (currentTheme === 'dark') {
             dark.classList.toggle('current_clr_dark');
             light.classList.toggle('current_clr_light');
             dark.classList.setItem('current_clr_dark');
         }
-    pagechange(homelink,bloglink);
-    bgcolor(dark,light);
+        pagechange(homelink, bloglink);
+        bgcolor(dark, light);
     }
 }
 initcolor();
